@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --color-white: #FFFFFF;
+}
+*, ::before, ::after{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+.displayNone{
+  display:none;
+}
+.smallCaps{
+  font-variant: small-caps;
+}
+html{
+  font-size:16px;
+  font-family: "Roboto", sans-serif;
+}
+body{
+  background-color: #343d3f;
+}
+
+/* Define the width of the scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* For vertical scrollbars */
+  height: 12px; /* For horizontal scrollbars */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #343d3f; /* Color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+  border-radius: 6px; /* Rounded corners */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color on hover */
+}
+
+/* Optional: Define a custom style for the scrollbar corners */
+::-webkit-scrollbar-corner {
+  background: none;
+
+}
+
+
+@media screen and (max-width:376px){
+  nav#primaryNav {
+    padding:.5rem;
+  }
+  form#signUpForm{
+    width: 17rem;
+  }
+}
+
