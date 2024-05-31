@@ -175,7 +175,7 @@ export default function MyFiles(){
   }
 
   async function copyTextToClipboard(shareableLink){
-    shareableLink = shareableLink.replace('HOSTNAME', apiEndPointUrls.hostname);
+    // shareableLink = shareableLink.replace('HOSTNAME', apiEndPointUrls.hostname);
     
     await navigator.clipboard.writeText(shareableLink); 
     setSnackbarState({
@@ -189,7 +189,7 @@ export default function MyFiles(){
   function handleDownloadFileReq(shareableLink){
     // console.log(refADownloadFile.current);
     // return;
-    shareableLink = shareableLink.replace('HOSTNAME', apiEndPointUrls.hostname);
+    // shareableLink = shareableLink.replace('HOSTNAME', apiEndPointUrls.hostname);
     console.log(shareableLink);
     // return;
     refADownloadFile.current.href=shareableLink;    
