@@ -84,7 +84,7 @@ export default function Treasure(){
       
     } catch (error) {      
       console.log(error.message);
-      showError(updateStateSuccessAndErrorMsg, 'Failed to Sign In');
+      showError(updateStateSuccessAndErrorMsg, 'Unable to Upload File, please try again after some time!');
     } finally{
       // upload completed
         setStateUploading(false);

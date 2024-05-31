@@ -97,7 +97,7 @@ export default function MyFiles(){
       
     } catch (error) {      
       console.log(error.message);
-      showError(updateStateSuccessAndErrorMsg, 'Failed to Sign In');
+      showError(updateStateSuccessAndErrorMsg, 'Unable to List files, please try again after some time!');
     }
 
 
