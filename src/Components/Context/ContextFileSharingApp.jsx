@@ -71,18 +71,25 @@ const ContextProviderFileSharingApp = ({children}) =>{
       'get-all-the-files-uploaded-by-current-user': "http://localhost:4000/api/v1/file/get-all-the-files-uploaded-by-current-user"
     }
   };
+
   let apiEndPointUrls = {
-    'handshake': "https://m6node-day-7-project-url-shortener.onrender.com/handshake/hello",
-    'sign-in': "https://m6node-day-7-project-url-shortener.onrender.com/api/v1/user/sign-in",
-    'sign-up':"https://m6node-day-7-project-url-shortener.onrender.com/api/v1/user/sign-up",
-    'validate-auth-token': "https://m6node-day-7-project-url-shortener.onrender.com/api/v1/user/validate-auth-token",
-    'short-url': "https://m6node-day-7-project-url-shortener.onrender.com/api/v1/short-url",
-    'get-all-urls-created-by-current-user': "https://m6node-day-7-project-url-shortener.onrender.com/api/v1/get-all-urls-created-by-current-user",
-    'delete-a-document-created-by-this-current-user': "https://m6node-day-7-project-url-shortener.onrender.com/api/v1/delete-a-document-created-by-this-current-user"
+    hostname: "https://m6node-file-sharing-application.onrender.com",
+    user : {
+      'sign-up': "https://m6node-file-sharing-application.onrender.com/api/v1/user/sign-up",
+      'sign-in': "https://m6node-file-sharing-application.onrender.com/api/v1/user/sign-in",
+      'validate-auth-token': "https://m6node-file-sharing-application.onrender.com/api/v1/user/validate-auth-token",
+      'handshake': "https://m6node-file-sharing-application.onrender.com/api/v1/user/handshake/hello",
+    },
+    file: {      
+      'upload-file': "https://m6node-file-sharing-application.onrender.com/api/v1/file/upload-file",
+      'delete-file': "https://m6node-file-sharing-application.onrender.com/api/v1/file/delete-file",
+      'download-file': "https://m6node-file-sharing-application.onrender.com/api/v1/file/download-file/xy2scs5qufwtkd8pxbfo",
+      'get-all-the-files-uploaded-by-current-user': "https://m6node-file-sharing-application.onrender.com/api/v1/file/get-all-the-files-uploaded-by-current-user"
+    }
   };
 
   // testing
-  apiEndPointUrls = apiEndPointUrlsLocalhost;
+  // apiEndPointUrls = apiEndPointUrlsLocalhost;
 
   let initialAppState = localStorage.getItem('Alex21CFileSharingApp');
   if(initialAppState){
