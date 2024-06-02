@@ -18,6 +18,9 @@ export default function MyFiles(){
   });
   // useEffect(()=>{console.log(snackbarState)}, [snackbarState]);
 
+  // useEffect(()=>{
+  //   console.log(stateFilesUploadedByUser);
+  // }, [stateFilesUploadedByUser]);
 
   useEffect(()=>{
     document.title="My Files";
@@ -179,7 +182,7 @@ export default function MyFiles(){
     
     await navigator.clipboard.writeText(shareableLink); 
     setSnackbarState({
-      msg: "Shortened URL Successfully Copied inside yours device clipboard!",
+      msg: "File Shareable URL, Successfully Copied inside yours device clipboard!",
       successOrError: "success"
     });
 
@@ -187,16 +190,11 @@ export default function MyFiles(){
   }
 
   function handleDownloadFileReq(shareableLink){
-    // console.log(refADownloadFile.current);
-    // return;
-    // shareableLink = shareableLink.replace('HOSTNAME', apiEndPointUrls.hostname);
-    console.log(shareableLink);
+    // console.log(shareableLink);
     // return;
     refADownloadFile.current.href=shareableLink;    
-    refADownloadFile.current.click();
-    
-    
-    // console.log(shareableLink)
+    refADownloadFile.current.click();    
+
   }
 
   return (
@@ -243,14 +241,15 @@ export default function MyFiles(){
                     </dl>
                     <div className="flex gap-[.8rem] flex-col max-w-[15rem] ">
                     <button   
-                        onClick={()=>{
-                          handleDownloadFileReq(document.fileTrackableShareableLink, apiEndPointUrls)
+                        onClick={(event)=>{              
+                          // console.log('download btn clicked !');            
+                          handleDownloadFileReq(document.fileTrackableShareableLink)
                         }} 
                         className="select-none flex gap-[.5rem] items-center justify-center outline outline-2 outline-amber-50  hover:bg-emerald-300 transition cursor-pointer  rounded-full px-[.5rem] py-[.2rem]  hover:text-slate-900 text-slate-50    text-[1.5rem]  bg-emerald-500 ">        
                         <i title="Download File" className="cursor-pointer fa-sharp fa-solid fa-file "></i>
-                        <span className="text-[1.3rem]">Download</span>
-                        <a href="#" ref={refADownloadFile} className="displayNone">hi there</a>
+                        <span className="text-[1.3rem]">Download</span>                       
                       </button>
+                      <a href="#" ref={refADownloadFile} className="displayNone">hi there</a>
 
                       <button   
                         onClick={()=>{
@@ -265,13 +264,13 @@ export default function MyFiles(){
                         title="DELETE Permanently!"
                         onClick={
                         (event)=>{
-
+                          // console.log(event.target);
                           handleDeleteURLRequest(event.target.getAttribute('file-unique-id'));
                         }
                         } 
                         file-unique-id={document.fileUniqueID} className="outline outline-2 outline-amber-50 bg-red-500 hover:bg-red-300 transition cursor-pointer  rounded-full  px-[5rem] py-[.2rem]   hover:text-slate-900 text-slate-50 text-[1.5rem] flex gap-[.5rem] items-center">
                         <i className="fa-solid fa-trash" file-unique-id={document.fileUniqueID} ></i>
-                        <span className="text-[1.3rem]">Delete</span>
+                        <span className="text-[1.3rem]" file-unique-id={document.fileUniqueID}>Delete</span>
                       </button>
                       
 

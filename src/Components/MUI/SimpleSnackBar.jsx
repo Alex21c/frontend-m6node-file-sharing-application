@@ -14,7 +14,7 @@ export default function SimpleSnackbar({open, setOpen, snackbarState}) {
 
   // default message
     if(snackbarState?.msg === null){
-      snackbarState.msg = "Shortened URL Successfully Copied inside yours device clipboard!";
+      snackbarState.msg = "File Shareable URL, Successfully Copied inside yours device clipboard!";
     }
 
   const handleClose = (event, reason) => {

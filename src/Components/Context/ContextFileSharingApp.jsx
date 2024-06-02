@@ -89,7 +89,7 @@ const ContextProviderFileSharingApp = ({children}) =>{
   };
 
   // testing
-  // apiEndPointUrls = apiEndPointUrlsLocalhost;
+  apiEndPointUrls = apiEndPointUrlsLocalhost;
 
   let initialAppState = localStorage.getItem('Alex21CFileSharingApp');
   if(initialAppState){
